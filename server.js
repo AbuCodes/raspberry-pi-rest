@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/toggleLED', function(req, res) {
+app.post('/toggleLED', function(req, res) {
   var io = req.io;
   var state = req.body.state;
   io.emit('updateState', state);
